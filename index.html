@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amin Store & Optical | Enjoy Your Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            padding: 15px 15px 100px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .header {
+            text-align: center;
+            background: #131b2e;
+            padding: 20px 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .top-sliding-banner {
+            background: linear-gradient(90deg, #38bdf8, #3b82f6, #8b5cf6);
+            padding: 8px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .top-sliding-text {
+            display: inline-block;
+            animation: marquee 18s linear infinite;
+            font-weight: bold;
+            font-size: 12px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .logo-box-small {
+            width: 75px;
+            height: 75px;
+            background: #ffffff;
+            border-radius: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .logo-box-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-title-box h1 {
+            font-size: 21px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 3px;
+        }
+        .header-title-box p {
+            font-size: 13px;
+            color: #00f2fe;
+            font-style: italic;
+            font-weight: 600;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #d1d5db;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+        }
+        .top-contact-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(34, 197, 94, 0.15));
+            border: 2px dashed #22c55e;
+            padding: 12px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .top-contact-box .contact-title {
+            font-size: 14px;
+            background: linear-gradient(45deg, #4ade80, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .top-contact-box a {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+            display: inline-block;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.15), rgba(121, 40, 202, 0.15));
+            border: 1px solid rgba(255, 0, 127, 0.4);
+            padding: 14px;
+            border-radius: 14px;
+            text-align: left;
+            box-shadow: inset 0 0 10px rgba(255,0,127,0.1);
+        }
+        .highlight-item {
+            font-size: 13px;
+            color: #f3f4f6;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.4;
+        }
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-item span {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        .card {
+            background: #131b2e;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .btn-online-container {
+            position: relative;
+            margin-top: 5px;
+        }
+        .btn-online {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #ff007f, #7928ca);
+            color: white;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.7);
+            animation: pulseGlow 1.5s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 0, 127, 0.5); }
+            100% { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 0, 127, 0.9), 0 0 35px rgba(0, 219, 222, 0.5); }
+        }
+        .pointing-hand {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            animation: bounceFinger 1s infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes bounceFinger {
+            0% { transform: translateY(-50%) translateX(0); }
+            100% { transform: translateY(-50%) translateX(-8px); }
+        }
+        .service-item {
+            background: rgba(255,255,255,0.03);
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #ff007f;
+        }
+        .service-item h3 {
+            font-size: 15px;
+            color: #f43f5e;
+            margin-bottom: 4px;
+        }
+        .service-item p {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin: 0;
+        }
+        .watch-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .watch-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            text-align: center;
+            padding-bottom: 8px;
+        }
+        .watch-card img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            margin-bottom: 6px;
+        }
+        .watch-card span {
+            font-size: 12px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+        .gallery-scroll-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #ff007f #131b2e;
+        }
+        .gallery-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .gallery-scroll-container::-webkit-scrollbar-thumb {
+            background: #ff007f;
+            border-radius: 10px;
+        }
+        .gallery-slide-item {
+            flex: 0 0 48%;
+            scroll-snap-align: start;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .gallery-slide-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .btn-call { background: #10b981; }
+        .btn-wa { background: #22c55e; }
+        .btn-map { background: #ef4444; }
+        .btn-fb { background: #3b82f6; }
+        .btn-insta { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .footer {
+            text-align: center;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            margin-top: 15px;
+            line-height: 1.7;
+            padding: 18px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .footer p.address-line {
+            color: #f43f5e;
+            font-weight: 700;
+        }
+        .footer p.pin-line {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+        .footer p.copyright-line {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00dbde, #fc00ff, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="top-sliding-banner">
+                <div class="top-sliding-text">
+                    🔥 Special Offers: All Brand Watches, Wall Clocks & Smartwatches Available 📱 iPhone Specialist & Quick Display Change 💳 Mobile Recharge & Bill Pay Available!
+                </div>
+            </div>
+            <div class="header-top">
+                <div class="logo-box-small">
+                    <img src="logo (1).jpg" alt="Amin Store Logo">
+                </div>
+                <div class="header-title-box">
+                    <h1>Amin Store & Optical</h1>
+                    <p>Enjoy Your Life</p>
+                </div>
+            </div>
+            <div class="badge">Mobile Accessories, Watches, Repairing & Optical Shop</div>
+            <div class="top-contact-box">
+                <div class="contact-title">📞 Call & WhatsApp Now</div>
+                <a href="tel:9365958847">9365958847</a>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-item">⌚ <span>Watch World:</span> ওয়াল ক্লক (Wall Clock), হাত ঘড়ি এবং যেকোনো ব্র্যান্ডের স্মার্টওয়াচ ও ঘড়ি পাওয়া যায়!</div>
+                <div class="highlight-item">⚡ <span>Quick Service:</span> All Models Display & Folder Change</div>
+                <div class="highlight-item">💳 <span>Recharge Service:</span> Mobile Recharge, DTH & Bill Payment Available</div>
+                <div class="highlight-item">🛠️ <span>Specialist:</span> iPhone Repairing Expert</div>
+                <div class="highlight-item">📱 <span>Customization:</span> Mobile Back Paper, Ring, PPF & Custom Photo Print</div>
+                <div class="highlight-item">👓 <span>Optical Care:</span> আপনার মনপছন্দ পাওয়ার চশমা ভালো ফ্রেম দিয়ে মাত্র ১ ঘণ্টার মধ্যে তৈরি করে দেওয়া হয়!</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⌚ All Brand Watches & Wall Clocks</h2>
+            <p>আমাদের দোকানে সব ব্র্যান্ডের প্রিমিয়াম হাত ঘড়ি, ডিজিটাল ও অ্যানালগ ওয়াল ক্লক এবং লেটেস্ট স্মার্টওয়াচ কালেকশন রয়েছে:</p>
+            <div class="watch-showcase">
+                <div class="watch-card">
+                    <img src="shop50.jpg" alt="Wall Clocks & Watches" loading="lazy">
+                    <span>🕰️ Designer Wall Clocks</span>
+                </div>
+                <div class="watch-card">
+                    <img src="shop1 (1).jpg" alt="Smartwatches & Wrist Watches" loading="lazy">
+                    <span>⌚ Smart & Wrist Watches</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛍️ Online Digital Store</h2>
+            <p>Visit our online catalog to check stock availability and prices:</p>
+            <div class="btn-online-container">
+                <a href="https://mybillbook.in/store/amin_stores" target="_blank" class="btn-online">✨ Click & Visit Amin Store Online ✨</a>
+                <div class="pointing-hand">👉</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📦 Product & Catalog</h2>
+            <div class="service-item" style="border-left-color: #22c55e;">
+                <h3>💳 Mobile Recharge & Bill Payment</h3>
+                <p>All operator mobile recharge, DTH recharge, electricity bill payment, and money transfer services.</p>
+            </div>
+            <div class="service-item" style="border-left-color: #eab308;">
+                <h3>⌚ Watches, Wall Clocks & Smartwatches</h3>
+                <p>All branded wrist watches, stylish wall clocks, table clocks, and smartwatches.</p>
+            </div>
+            <div class="service-item">
+                <h3>📱 Mobile Accessories & Customization</h3>
+                <p>Back covers, tempered glasses, fast chargers, back paper, ring, PPF & photo print.</p>
+            </div>
+            <div class="service-item" style="border-left-color: #f59e0b;">
+                <h3>👓 Optical Section (1 Hour Express)</h3>
+                <p>Stylish frames, prescription glasses, sunglasses, and fast 1-hour glass fitting.</p>
+            </div>
+            <div class="service-item" style="border-left-color: #06b6d4;">
+                <h3>💻 Mobile Repairing & iPhone Specialist</h3>
+                <p>Quick display/folder change, iPhone specialist repair, Android & iOS software unlocking.</p>
+            </div>
+            <div class="service-item" style="border-left-color: #8b5cf6;">
+                <h3>👁️ Computerized Eye Testing</h3>
+                <p>Accurate computerized eye testing and quick, precise glass fitting.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📸 Store Gallery & Photos</h2>
+            <p>আমাদের দোকানের আকর্ষণীয় ছবিগুলো দেখতে ডানে-বামে স্লাইড (Swipe) করুন:</p>
+            <div class="gallery-scroll-container">
+                <div class="gallery-slide-item"><img src="shop50.jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop1 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop2 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop3 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop4 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop5 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop6 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop7 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop8 (1).jpg" alt="Photo" loading="lazy"></div>
+                <div class="gallery-slide-item"><img src="shop9 (1).jpg" alt="Photo" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Contact & Social Media</h2>
+            <a href="tel:9365958847" class="social-btn btn-call">📞 Call Now</a>
+            <a href="https://wa.me/919365958847" target="_blank" class="social-btn btn-wa">💬 WhatsApp Message</a>
+            <a href="https://maps.app.goo.gl/dkkRoW3ERPnfSZzw9" target="_blank" class="social-btn btn-map">📍 Google Maps Location</a>
+            <a href="https://www.facebook.com/ismail.barbhuiya.311" target="_blank" class="social-btn btn-fb">🌐 Facebook Page</a>
+            <a href="https://www.instagram.com/aminstore__?rpxt=MXVsdWpyMTkzaDZheg==" target="_blank" class="social-btn btn-insta">📷 Instagram Store (1)</a>
+        </div>
+
+        <div class="footer">
+            <p class="address-line">📍 Address: Bhaga Bazar (Near Bhaga GP Office, Opposite Abc Medicine Centre)</p>
+            <p class="pin-line">Cachar, Assam - 788120 (PIN: 788120)</p>
+            <p class="copyright-line">© Amin Store & Optical - Enjoy Your Life</p>
+        </div>
+    </div>
+</body>
+</html>
